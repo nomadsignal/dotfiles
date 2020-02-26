@@ -1,0 +1,43 @@
+// Dracula colors
+* {
+  background-color: #282A36;
+  border-color: #DD4B39;
+  text-color: #f8f8f2;
+
+  font:                 "inconsolata-g 11";
+}
+
+#window {
+  anchor: north;
+  location: north;
+  width: 50%;
+  padding: 4px;
+  children: [horibox];
+}
+
+#horibox {
+  orientation: horizontal;
+  children: [prompt, entry, listview ];
+} 
+
+#listview {
+  layout: horizontal;
+  spacing: 10px;
+  lines: 100;
+}
+
+#entry {
+  expand: false;
+  width: 10em;
+  padding: 0 10px;
+}
+
+#element {
+  padding: 0px 2px;
+}
+
+#element selected {
+  background-color: #282A36;
+  text-color: #BD93F9;
+}
+
