@@ -2,6 +2,7 @@ SYSTEM_PATH=$PATH
 unset PATH
 
 PATH=/usr/local/bin
+PATH=$PATH:$HOME/bin/
 PATH=$PATH:/usr/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:$XDG_CONFIG_HOME/npm-global/bin

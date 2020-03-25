@@ -1,10 +1,9 @@
 set $mod Mod1 
-for_window [class="^.*"] border pixel 2
-gaps inner 10
+for_window [class="^.*"] border pixel 4
 #
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Inconsolata-g 10
+font pango:Inconsolata-g 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -133,39 +132,30 @@ bindsym $mod+r mode "resize"
 # Assign colors
 # =============================================================================
 
-#set $bg           #204A87
-#set $bg-urgent    #3465A4
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-set $bg            #DD4B39
-set $bg-inactive   #ff
-set $bg-urgent     #b5294a
-set $text          #eeeeec
-set $text-inactive #babdb6
-
-set $bar           #222222
-set $seperator     #444444
-set $statusline    #888A85
-
-#                       border        background   text           indicator
-client.focused          $bg           $bg          $text          $bar
-client.unfocused        $bg-inactive  $bg-inactive $text-inactive $bar
-client.focused_inactive $bg-inactive  $bg-inactive $text-inactive $bar
-client.urgent           $bg-urgent    $bg-urgent   $text          $bar
-
+client.background       #F8F8F2
 bar {
-    font           pango:Inconsolata 10
+    font           pango:Inconsolata-g 10
     position       bottom
     status_command i3status -c $HOME/.config/i3/status/config 
 
     colors {
-        background              $bar
-        separator               $seperator
-        statusline              $statusline
-        active_workspace        $bg $bg $text
-        focused_workspace       $bg-urgent $bg $text
-        inactive_workspace      $seperator $seperator $text
-        urgent_workspace        $bg-urgent $bg-urgent $text
-    }
+    background #282A36
+    statusline #F8F8F2
+    separator  #44475A
+
+    focused_workspace  #44475A #44475A #F8F8F2
+    active_workspace   #282A36 #44475A #F8F8F2
+    inactive_workspace #282A36 #282A36 #BFBFBF
+    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    binding_mode       #FF5555 #FF5555 #F8F8F2
+  }
 }
 
 # =============================================================================
